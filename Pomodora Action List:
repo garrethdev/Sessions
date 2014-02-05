@@ -1,0 +1,89 @@
+Pomodora Action List:
+Goal: create a pomodoro style app using Flat UI and modular code. Apply Habit design and gear the product towards women. Get user feedback from friends, and actual user testing software
+
+Technology:
+-Modular Code
+  I. Modularized Javascript
+  II. Object Oriented CSS
+-Handlebars Practice
+-
+
+
+Notes on Design:
+-Women prefer tints of colors
+-Women prefer softer colors
+-Use more rounded typefaces
+-Pay  closer to attention color choices
+
+
+Release 1: COMPLETE
+-Get Timer Working COMPLETE
+-Get Slider working COMPLETE
+-Allow user to input items and see them come up in the side COMPLETE
+-Style Div
+  I. All Pieces in the correct place
+  II. Main Div Sytlized
+
+  Steps: [Setup Slider, Setup so Slider Increases, Style Div, Fix Button Display, Timer, Timer Area, Wireframe Bin Feature, Align Elements, Bin Feature]
+    I. Fixes
+    II. Modularize Code
+
+
+Release 2 COMPLETE
+  I. Center Main Div COMPLETE
+  II. Bottom Feature COMPLETE
+      A. Style bottom feature COMPLETE
+      B. Fix Bottom Feature to display COMPLETE
+  III. Modularize Code COMPLETE
+
+Release 3 COMPLETE
+  I. Touch up Feature Bar
+     A. Color COMPLETE
+     B. Handlebars
+     C. Social Updates INC
+  II. Modularize COMPLETE
+     A. OO CSS Presentation COMPLETE
+     B. OO CSS Implementation COMPLETE
+     C. Javascript Design Pattern COMPLETE
+  III. Change Header COM
+     A. Add Buttons COM
+     B. Stylize it COM
+
+Release 4
+  I. Design:
+    A. Add Engraving
+    B. Highlighting of Buttons
+    C. Content on What is Pomodora
+    D. Who Designed it
+  II. Deployment
+    A. Get Feedback from 5 second landing
+    B. Get Russ Feedback
+    C. Heroku
+  III. Development
+    A. Modularize Que Feature
+    B. Separate Que Feature
+
+Steps:
+-Wireframe Styling
+-Change Look
+-Change Counter feature COMPLETE
+-Write out Engraving Text
+-Put up Engraving
+
+
+Release 5:
+I. Signin Form
+II. Posting System
+
+Release 4 and 5
+-Different Timers COMPLETE
+-Fix Que Feature
+-About Me
+-What is Pomodora
+-Push to Heroku
+-Feedback
+-Sign in Form after two Pomodoras
+
+
+
+

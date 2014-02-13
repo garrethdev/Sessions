@@ -41,22 +41,7 @@ h1 {
   left: 50px;
   font-size: 40px;
 }
-.que {
-  height: 240px;
-  bottom: 110px;
-  width: 102px;
-  background-color: #6E9AD8;
-  position: relative;
-  left: 400px;
-  border-radius: 3px;
-  -moz-box-shadow: inset 0 0 10px #5D8DD1;
-  -webkit-box-shadow: inset 0 0 10px #5D8DD1;
-  box-shadow: 3px 3px 1px #888888;
-  color: #666;
-  background-color: #E8EFF5;
-  box-shadow: 0px -1px 0px rgba(0,0,0,.5);
-  box-shadow: inset 1px 3px 3px #887C7C, 1px 1px 3px #FFF;
-}
+
 
 .pomodoro-main-content {
   position: relative;
@@ -135,12 +120,12 @@ h3 {
   text-align: center;
 }
 
-.list-container {
-  top: 21px;
-  width: 102px;
-  height: 204px;
-  position: absolute;
+h3 {
+  position: relative;
+  top: 100px;
+  left: 100px;
 }
+
 #que-footer {
   position: absolute;
   left: 40px;

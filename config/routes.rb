@@ -1,4 +1,6 @@
 Pomodora::Application.routes.draw do
+  # root :to => "Something#index"
+  match "/" => "names#index"
   get "names/index"
 
   # The priority is based upon order of creation:

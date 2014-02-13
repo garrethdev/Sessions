@@ -19,8 +19,6 @@
 
 //for functions that are used alot, customize them
 //so they can accept different parameters
-//dont instantiate every
-
 
 function hideYesandNo() {
     var start = $('#start');
@@ -33,24 +31,10 @@ var startClicked = (function (button) {
   counter = 0;
   counter1 = 0;
   var triggerCountdown = function (event, button){
-    if ($('#textbox').val().length >= 1) {
-      counter++
-      createTodoItem(counter)
-    }
     button.starts.prop("disabled",true)
     var string = $('#countdown').text().replace(':00','')
     var string = Number(string)
     countdown("countdown", 0, 02);
-  };
-  var createTodoItem = function (counter) {
-    var itemNum = "item" + counter
-    var itemNumber = document.createElement("div")
-    itemNumber.setAttribute("id", itemNum)
-    itemNumber.setAttribute("class", "completed")
-    $('.list-container').append(itemNumber)
-    $('.completed').css("display", "inline")
-    var useritem = $('#textbox').val()
-    $("#" + itemNum).text(useritem)
   };
   var countdown = function (element, minutes, seconds) {
     var time = minutes*60 + seconds;
@@ -65,7 +49,6 @@ var startClicked = (function (button) {
           $('#start').css("display", "none")
           hideYesandNo()
         })
-        console.log("interval " + interval)
         clearInterval(interval);
         return;
       }
@@ -74,9 +57,7 @@ var startClicked = (function (button) {
       var seconds = time % 60;
       if (seconds < 10) seconds = "0" + seconds;
       var text = minutes + ':' + seconds;
-      console.log(text)
       el.innerHTML = text;
-      console.log(el)
       time--;
     }, 1000);
   };
@@ -110,47 +91,33 @@ function showStartHideYesNo(button) {
 };
 var buttonClicked = (function (button) {
   var id = 0;
-  var queFeature = function queFeature(yes, opacityLevel) {
-    if (yes) {
-      var opacityAmount = 1.0
-      opacitySetting(1)
-    }
-    else {
-      var opacityAmount = 0.0
-      opacitySetting(0)
-    };
-  };
-
-  var opacitySetting = function (opacityAmount) {
-    var moveItem = (counter1 * -20) +39
-    var topAmount = "+=" + (180 + moveItem)
-    $('#item' + counter).animate({
-    top: topAmount,
-    opacity: opacityAmount,
-    }, 3000, function() {});
-};
   var noButton = function(event, button) {
-    queFeature();
     hideYesandNo();
     showStartHideYesNo(button);
   };
   var yesButton = function(event, button) {
     counter1++
-    queFeature(yes)
     hideYesandNo();
     showStartHideYesNo(button)
     id +=10
     $('.progressBar').attr("id", "max" + id)
     function progress(percent, element) {
       var progressBarWidth = percent * element.width() / 100;
-      element.find('div').animate({ width: progressBarWidth }, 500);
+      buttonClicked.progressBarCheck(progressBarWidth, element)
     }
+
     $('.progressBar').each(function() {
       var bar = $(this);
       var max = $(this).attr('id');
       max = max.substring(3);
+          console.log("max" + max)
       progress(max, bar);
     });
+  }
+  var progressBarCheck = function (progressBarWidth, element) {
+    if (progressBarWidth <= 500) {
+      element.find('div').animate({ width: progressBarWidth }, 500);
+    }
   }
 
   var bindFunctions = function (button) {
@@ -168,7 +135,8 @@ var buttonClicked = (function (button) {
 
   return {
     noButton: noButton,
-    init: init
+    init: init,
+    progressBarCheck: progressBarCheck
   }
 }) ();
 

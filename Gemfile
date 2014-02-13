@@ -6,13 +6,10 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem "twitter-bootstrap-rails"
-gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -22,6 +19,15 @@ end
 
 gem 'therubyracer'
 gem 'jquery-rails'
+
+ group :production do
+  gem 'pg'
+ end
+
+  group :test,:development do
+    gem 'sqlite3'
+    gem 'pg'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

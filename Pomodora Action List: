@@ -51,17 +51,30 @@ Release 3 COMPLETE
 
 Release 4
   I. Design:
-    A. Add Engraving
+    A. Add Engraving COMPLETE
     B. Highlighting of Buttons
     C. Content on What is Pomodora
     D. Who Designed it
   II. Deployment
     A. Get Feedback from 5 second landing
-    B. Get Russ Feedback
+    B. Get Russ Feedback COMPLETE
     C. Heroku
-  III. Development
-    A. Modularize Que Feature
-    B. Separate Que Feature
+  III. Remove Que Feature COMPELTE
+
+
+
+Areas for Design Improvement:
+1. Fix CSS towards OOCSS
+2. Make bottom toolbar a darker blue
+3. Use the deep blue font http://pomodoro.me/images/dark_blue_bg.jpg for
+4. Larger Timer
+
+
+
+
+
+-User Login
+-Variable Reward Setup
 
 Steps:
 -Wireframe Styling

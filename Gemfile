@@ -17,9 +17,10 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
+gem 'pg'
 gem 'therubyracer'
 gem 'jquery-rails'
-gem 'mysql'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

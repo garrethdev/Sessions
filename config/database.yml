@@ -19,7 +19,7 @@ test:
 
 
 production:
-    adapter: sqlite3
+    adapter: postgresql
     encoding: unitcode
     database: ddor82o5ufvrck
     host: ec2-54-197-241-82.compute-1.amazonaws.com

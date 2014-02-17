@@ -21,4 +21,8 @@ test:
 production:
     adapter: sqlite3
     encoding: unitcode
-    database: storage.db
+    database: ddor82o5ufvrck
+    host: ec2-54-197-241-82.compute-1.amazonaws.com
+    username: bacuyrqelfsqyl
+    password: 2zK2jsQH_-FGJL82fHQbZfS8xV
+    port: 5432

@@ -6,8 +6,6 @@ Technology:
   I. Modularized Javascript
   II. Object Oriented CSS
 -Handlebars Practice
--
-
 
 Notes on Design:
 -Women prefer tints of colors
@@ -49,8 +47,8 @@ Release 3 COMPLETE
      A. Add Buttons COM
      B. Stylize it COM
 
-Release 4
-  I. Design:
+Release 4:
+  I. Design
     A. Add Engraving COMPLETE
     B. Highlighting of Buttons
     C. Content on What is Pomodora
@@ -58,8 +56,13 @@ Release 4
   II. Deployment
     A. Get Feedback from 5 second landing
     B. Get Russ Feedback COMPLETE
-    C. Heroku
+    C. Heroku COMPLTEE
   III. Remove Que Feature COMPELTE
+  IV. OOCSS
+      A. Finish Fonts Styling
+      B. Fix Main Content for Container
+      C. Fix Main Content positioning
+
 
 
 

@@ -78,11 +78,6 @@ button {
   top: 90px;
   float: right;
 }
-h3 {
-  position:relative;
-  top: 30px;
-  left: 215px;
-}
 
 .completed {
   position: absolute;

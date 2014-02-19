@@ -1,4 +1,4 @@
-body {
+/*/*/*body {
   margin: 0px;
 }
 .header {
@@ -14,13 +14,7 @@ body {
     -moz-box-shadow: 0 0 10px rgba(0,0,0,0.1);
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
-h1 {
-  font-size: 58.5px;
-  position: absolute;
-  left: 190px;
-  font-family: 'Marck Script', cursive;
-  color: #5D8DD1;
-}
+
 
 .icon {
   height: 80px;
@@ -120,12 +114,6 @@ h3 {
   text-align: center;
 }
 
-h3 {
-  position: relative;
-  top: 100px;
-  left: 100px;
-}
-
 #que-footer {
   position: absolute;
   left: 40px;
@@ -169,7 +157,7 @@ h3 {
   height: 100%;
   color: #fff;
   text-align: right;
-  line-height: 22px; /* same as #progressBar height if we want text middle aligned */
+  line-height: 22px;  same as #progressBar height if we want text middle aligned
   width: 0;
   background-color: #23C77D;
   border-radius: 5px;
@@ -185,8 +173,8 @@ h3 {
 .menu-item1 {
   position: relative;
   left: 800px;
-  top: 30px;
   color: #010259;
+  top: 0px;
 }
 
 #about {
@@ -235,4 +223,4 @@ h3 {
   position: relative;
   left: 48px;
   bottom: 40px;
-}
+}*/*/*/

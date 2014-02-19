@@ -1,21 +1,33 @@
-body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;}
-
-title {
+body {  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
+}
+.title {
   font-family: 'Marck Script', cursive;
   font-size: 58.5px ;
+  color: #5D8DD1;;
+}
+h1 {
+  font-size: 40px;
 }
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: bold;
+  font-family: Aller;
 }
 
 h3 {
   font-size: 16px;
   font-weight: bold;
+  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 }
 h4 {
   font-size: 14px;
   font-weight: bold;
+  font-family: Aller;
 }
 
 /*-Include type of Font for each type*/
+
+/*Types of Fonts
+
+button:(needs h2 or h3)
+font-size: 17px ;*/

@@ -66,9 +66,12 @@ body {
 }
 
 .time-buttons-structure {
-  width: 100%;
-  display:inline-block;
-  margin-left:-10px;
+  width: 350px;
+  display: block;
+  margin-left: 50px;
+  height: 68px;
+  position: relative;
+  top: 10px;
 }
 #no {
   background-color: #C74352;;
@@ -77,6 +80,7 @@ body {
 #countdown {
   font-family: Aller;
   font-weight: 500;
+  font-size: 80px;
 }
 div.pomodoro-main-content {
   background-color: #ffffff;
@@ -90,13 +94,11 @@ div.pomodoro-main-content {
   margin: auto;
 }
 
-.black-footer-styling {
+/*.black-footer-styling {
   background-color: #222;
-  border-top: 2px solid #000;
-  border-bottom: 1px solid #000;
   -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.4);
   box-shadow: inset 0 0 1px rgba(255,255,255,0.4);
-}
+}*/
 
 
 #que-footer {

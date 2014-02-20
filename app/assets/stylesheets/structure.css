@@ -31,15 +31,17 @@
 #countdown {
   display: block;
   font-size: 40px;
-  margin-left: 130px;
-  margin-top: 130px;
-  width: 35%;
+  margin-left: 110px;
+  width: 110px;
+  position: relative;
+  top: 30px;
 }
+
 
 .pomodoro-main-content {
   position: relative;
   width: 450px;
-  height: 250px;
+  height: 300px;
 }
 
 .two-button-switch {
@@ -53,12 +55,12 @@
 }
 
 #user-input {
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  text-align: center;
-  top: 100px;
-  left: 45px;
+display: block;
+position: relative;
+text-align: center;
+left: 45px;
+margin-top: 80px;
+margin-right: 100px;
 }
 
 
@@ -72,7 +74,6 @@
 
 button {
   position: relative;
-  top: 90px;
   float: right;
 }
 
@@ -84,21 +85,22 @@ button {
 }
 #start {
   width: 200px;
-  top: 80px;
+  bottom: 10px;
+  margin-right: 130px;
 }
 
 #yes {
   display: none;
-  right: 120px;
+  right: 240px;
   background-color: #5D8DD1;
+  bottom: 10px;
 }
 
 #no {
   display: none;
-  bottom: 40px;
+  bottom: 10px;
   position: relative;
-  top: 90px;
-  left: 40px;
+  right: 100px;
 }
 
 
@@ -186,7 +188,7 @@ button {
   transition: all 0.5s ease-in-out;
   -webkit-backface-visibility: hidden;
   box-shadow: 0 1px 0 rgba(255,255,255,0.08),inset 1px 1px rgba(255,255,255,0.06);
-  background-color: #333;
+  background-color: #1E486A;
   float: left;
   margin-left: 10px;
 }

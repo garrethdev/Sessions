@@ -42,13 +42,13 @@ var startClicked = (function (button) {
     var interval = setInterval(function() {
     var el = document.getElementById(element);
       if(time == -1) {
-        countdown.fadeOut('slow', function() {
-          countdown.css("display", "none")
-          $(".finished").css("display", 'inline')
+        // countdown.fadeOut('slow', function() {
+          countdown.text('Done?')
+          // $(".finished").css("display", 'inline')
           $('#start').fadeToggle( "slow", "linear" )
           $('#start').css("display", "none")
           hideYesandNo()
-        })
+
         clearInterval(interval);
         return;
       }
@@ -79,10 +79,10 @@ var startClicked = (function (button) {
 }) ();
 
 function showStartHideYesNo(button) {
-  $('.finished').fadeOut('slow', function() {
-      $('.finished').css("display", "none")
-      $('#countdown').css("display", "inline-block")
-    })
+  // $('.finished').fadeOut('slow', function() {
+  //     $('.finished').css("display", "none")
+  //     $('#countdown').css("display", "inline-block")
+  //   })
   button.no.css("display", "none")
   button.yes.css("display", "none")
   button.starts.fadeToggle( "slow", "linear" )
@@ -92,10 +92,12 @@ function showStartHideYesNo(button) {
 var buttonClicked = (function (button) {
   var id = 0;
   var noButton = function(event, button) {
+    button.countdown.text("25:00")
     hideYesandNo();
     showStartHideYesNo(button);
   };
   var yesButton = function(event, button) {
+    button.countdown.text("25:00")
     counter1++
     hideYesandNo();
     showStartHideYesNo(button)
@@ -209,6 +211,7 @@ $(function (){
   button.no = $('#no');
   button.yes = $('#yes');
   button.starts = $('#start');
+  button.countdown = $('#countdown')
   button.longPomodoro = $('.twenty-five');
   button.medPomodoro = $('.ten');
   button.shortPomodoro = $('.five');

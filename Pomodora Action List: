@@ -12,7 +12,7 @@ Notes on Design:
 -Women prefer softer colors
 -Use more rounded typefaces
 -Pay  closer to attention color choices
-
+-Check out this brown for the header #c2a07b
 
 Release 1: COMPLETE
 -Get Timer Working COMPLETE
@@ -50,7 +50,7 @@ Release 3 COMPLETE
 Release 4:
   I. Design
     A. Add Engraving COMPLETE
-    B. Highlighting of Buttons
+    B. Highlighting of Buttons COMPLETE
     C. Content on What is Pomodora
     D. Who Designed it
   II. Deployment COMPLETE
@@ -58,10 +58,21 @@ Release 4:
     B. Get Russ Feedback COMPLETE
     C. Heroku COMPLTEE
   III. Remove Que Feature COMPELTE
-  IV. OOCSS
+  IV. OOCSS COMPLETE
       A. Finish Fonts Styling COMPLETE
       B. Fix Main Content for Container COMPLETE
-      C. Fix Main Content positioning
+      C. Fix Main Content positioning COMPLETE
+
+Release 5:
+  -Testing
+    I. More five second tests
+    II. Habit Design to
+  -Refactor CSS
+    I. refactor to one sheet
+  -Create feature for keeping track of pomodoras
+  -Create login feature
+
+
 
 -GO Over Heroku Problem with Tenor
 -Go Over CSS Positioning

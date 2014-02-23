@@ -6,9 +6,8 @@ body {
 .title
 {
   position: relative;
-  margin-left:180px;
-  margin-top:20px ;
-
+  margin-left: 180px;
+  margin-top: -45px;
 }
 .completed {
   background-color: #FAF5F6;
@@ -26,10 +25,9 @@ body {
   display: inline;
 }
 
-#about-title {
-  border-width: 0px 0px 0px 2px;
-
-}
+ #about-title {
+  margin-left: 4px;
+ }
 
 .pomodoro-choices {
   -webkit-font-smoothing: subpixel-antialiased;

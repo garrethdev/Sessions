@@ -3,31 +3,38 @@
 }
 .header {
   position: absolute;
-  width: 100%;
+  width: 99.5%;
   height: 60px;
-  border-bottom: solid grey;
-  border-width: 1px;
-  margin-top: 10px;
-  margin-left: 0px;
-  background-color: white;
-  -webkit-box-shadow: 0 0 10px rgba(0,0,0,04);
-    -moz-box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
+  background-color:;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: #dbd8d1;
+  -webkit-box-shadow: 0px 4px 0px #d2cec6, 0px 1px 0px rgba(0,0,0,.7);
+
+/*  line-height:4em;
+  border-bottom: 2px outset #C0B8AF;
+  background-color: #C8C3B4;*/
+ }
+
+ #about-title:hover {
+  text-decoration: underline;
+ }
+ #about-title {
+  margin-left: 3px;
+ }
+
+ #about-pomodoro:hover {
+  text-decoration: underline;
+ }
 
 
 .icon {
-  height: 80px;
-  width: 80px;
-  z-index: 10;
-  position: absolute;
-  margin-left: 80px;
-  top: -13px;
-  margin-bottom: 10px;
-  border-radius: 50px;
-  background-color: white;
-  border-bottom: solid grey;
+  width: 100px;
+  position: relative;
+  left: 400px;x;
+  bottom: 5px;
 }
+
 #countdown {
   display: block;
   font-size: 40px;
@@ -160,9 +167,9 @@ button {
 
 .menu-item1 {
   position: relative;
-  left: 850px;
+  left: 950px;
   color: #010259;
-  top: -115px;
+  top: -20px;
 }
 
 #about {

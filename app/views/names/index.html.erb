@@ -1,14 +1,10 @@
 <div class="header">
   <div class="icon">
-    <img src="/assets/icon.png"/>
+    <img src="/assets/pomodoro.png"/>
   </div>
   <header class= "title">Pomodora</header>
   <div class="menu-item1">
-    <h3 class="menu-item">What's a Pomodora?
-    </h3>
-  </div>
-
-  <div  id="about"class="menu-item1">
+    <h3 id="about-pomodoro" class="menu-item">What's a Pomodora?</h3>
       <h3 id="about-title" class="menu-item">About
     </h3>
   </div>
@@ -17,20 +13,21 @@
 </h2>
 
 <div class="pomodoro-main-content">
-  <div class="align-right">
-    <div class="time-buttons">
+    <div class="time-buttons time-buttons-structure">
       <button type="button" class="five pomodoro-choices "><h4> 5 minutes</h4> </button>
        <button type="button" class="ten pomodoro-choices "><h4> 10 minutes</h4> </button>
        <button type="button" class="twenty-five pomodoro-choices "><h4>Pomodora</h4></button>
     </div>
-    <div class="finished">Finished? </div>
     <h3 id="countdown">25:00</h3>
+    <div id = "pomodoroCounter"><h2 id="pomodoroCountertext">1</h2> </div>
     <form id ="user-input">
       <input id="textbox" type="text" name="todo"  placeholder="ex ~ Finish Reading Chapter 2">
     </form>
+  <div class="answer-buttons">
     <button id="start" class="button-style" type ="button">Start</button>
     <button id="yes" class="button-style" type ="button">Yes </button>
     <button id ="no" class="button-style" type="button"> No </button>
+  </div>
   </div>
 </div>
 <div class="footer-container black-footer-styling">

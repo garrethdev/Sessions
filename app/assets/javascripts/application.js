@@ -20,6 +20,8 @@
 //for functions that are used alot, customize them
 //so they can accept different parameters
 
+
+
 function hideYesandNo() {
     var start = $('#start');
     $('#yes').fadeToggle( "slow", "linear" );
@@ -99,6 +101,7 @@ var buttonClicked = (function (button) {
   var yesButton = function(event, button) {
     button.countdown.text("25:00")
     counter1++
+    console.log("counter1" + counter1)
     hideYesandNo();
     showStartHideYesNo(button)
     id +=10
@@ -106,7 +109,7 @@ var buttonClicked = (function (button) {
     function progress(percent, element) {
       var progressBarWidth = percent * element.width() / 100;
       buttonClicked.progressBarCheck(progressBarWidth, element)
-    }
+    };
 
     $('.progressBar').each(function() {
       var bar = $(this);
@@ -115,6 +118,13 @@ var buttonClicked = (function (button) {
           console.log("max" + max)
       progress(max, bar);
     });
+
+    var correctPomodoros = function () {
+      $('#pomodoroCounter').text()
+    }
+    correctPomodoros()
+
+
   }
   var progressBarCheck = function (progressBarWidth, element) {
     if (progressBarWidth <= 500) {
@@ -166,7 +176,6 @@ var NewsFeed = {
   var timerSetting = (function (button) {
     var setTimer = function (event, button, length) {
       var countdown = $('#countdown');
-      console.log(length)
       switch (length)
       {
         case 3:
@@ -221,4 +230,7 @@ $(function (){
   buttonClicked.init(button);
 });
 
-// create Timer Feature on the dom ugly
+// // Issues
+// -Initialized button should be changed
+// -tighter modules
+// -nothing in the global namespace

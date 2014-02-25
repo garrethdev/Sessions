@@ -15,6 +15,23 @@
   border-bottom: 2px outset #C0B8AF;
   background-color: #C8C3B4;*/
  }
+#pomodoroCounter {
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background: #C74352;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  bottom: 153px;
+  left: 410px;
+  border: outset grey 2px;
+}
+#pomodoroCountertext {
+  position: relative;
+}
 
  #about-title:hover {
   text-decoration: underline;
@@ -66,7 +83,7 @@ display: block;
 position: relative;
 text-align: center;
 left: 45px;
-margin-top: 80px;
+margin-top: 0px;
 margin-right: 100px;
 }
 

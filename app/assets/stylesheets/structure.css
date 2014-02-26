@@ -3,17 +3,12 @@
 }
 .header {
   position: absolute;
-  width: 99.5%;
+  width: 100%;
   height: 60px;
-  background-color:;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
   background-color: #dbd8d1;
+  top: 0px;
   -webkit-box-shadow: 0px 4px 0px #d2cec6, 0px 1px 0px rgba(0,0,0,.7);
 
-/*  line-height:4em;
-  border-bottom: 2px outset #C0B8AF;
-  background-color: #C8C3B4;*/
  }
 #pomodoroCounter {
   height: 60px;
@@ -48,8 +43,8 @@
 .icon {
   width: 100px;
   position: relative;
-  left: 400px;x;
-  bottom: 5px;
+  left: 340px;
+  top: 15px;
 }
 
 #countdown {
@@ -143,8 +138,7 @@ button {
 }
 
 .black-footer-styling {
-  background-image: url(http://pomodoro.me/images/light_blue_bg.jpg);
-}
+background-color: #6086AB;}
 
 
 

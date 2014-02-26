@@ -1,9 +1,10 @@
 body {  font-family: 'Open Sans',Helvetica,Arial,sans-serif;
 }
 .title {
-  font-family: 'Marck Script', cursive;
+  font-family: 'ChunkFive';
   font-size: 58.5px ;
-  color: #5D8DD1;;
+  color: white;
+  text-decoration: underline;
 }
 h1 {
   font-size: 40px;

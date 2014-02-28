@@ -20,15 +20,21 @@
 //for functions that are used alot, customize them
 //so they can accept different parameters
 
-
-
-function hideYesandNo() {
+var changeButtons = {
+  hideYesandNo: function () {
     var start = $('#start');
     $('#yes').fadeToggle( "slow", "linear" );
     $('#no').fadeToggle( "slow", "linear" );
     start.prop("disabled",false);
-};
-
+  },
+  showStartHideYesNo: function() {
+    button.no.css("display", "none")
+    button.yes.css("display", "none")
+    button.starts.fadeToggle( "slow", "linear" )
+    button.starts.css("display", "inline")
+    button.starts.prop("disabled", false)
+  }
+}
 var startClicked = (function (button) {
   counter = 0;
   counter1 = 0;
@@ -49,7 +55,7 @@ var startClicked = (function (button) {
           // $(".finished").css("display", 'inline')
           $('#start').fadeToggle( "slow", "linear" )
           $('#start').css("display", "none")
-          hideYesandNo()
+          changeButtons.hideYesandNo()
 
         clearInterval(interval);
         return;
@@ -80,30 +86,18 @@ var startClicked = (function (button) {
   };
 }) ();
 
-function showStartHideYesNo(button) {
-  // $('.finished').fadeOut('slow', function() {
-  //     $('.finished').css("display", "none")
-  //     $('#countdown').css("display", "inline-block")
-  //   })
-  button.no.css("display", "none")
-  button.yes.css("display", "none")
-  button.starts.fadeToggle( "slow", "linear" )
-  button.starts.css("display", "inline")
-  button.starts.prop("disabled", false)
-};
 var buttonClicked = (function (button) {
   var id = 0;
   var noButton = function(event, button) {
     button.countdown.text("25:00")
-    hideYesandNo();
-    showStartHideYesNo(button);
+    changeButtons.hideYesandNo();
+    changeButtons.showStartHideYesNo(button);
   };
   var yesButton = function(event, button) {
     button.countdown.text("25:00")
+    changeButtons.hideYesandNo();
+    changeButtons.showStartHideYesNo(button)
     counter1++
-    console.log("counter1" + counter1)
-    hideYesandNo();
-    showStartHideYesNo(button)
     id +=10
     $('.progressBar').attr("id", "max" + id)
     function progress(percent, element) {
@@ -120,12 +114,11 @@ var buttonClicked = (function (button) {
     });
 
     var correctPomodoros = function () {
-      $('#pomodoroCounter').text()
+    $('#pomodoroCountertext').text(counter1)
     }
     correctPomodoros()
-
-
   }
+
   var progressBarCheck = function (progressBarWidth, element) {
     if (progressBarWidth <= 500) {
       element.find('div').animate({ width: progressBarWidth }, 500);
@@ -173,57 +166,58 @@ var NewsFeed = {
       }
     }
 
-  var timerSetting = (function (button) {
-    var setTimer = function (event, button, length) {
-      var countdown = $('#countdown');
-      switch (length)
-      {
-        case 3:
-          countdown.text("25:00");
-          break;
-        case 2:
-          countdown.text("10:00");
+var timerSetting = (function (button) {
+  var setTimer = function (event, button, length) {
+    var countdown = $('#countdown');
+    switch (length)
+    {
+      case 3:
+        countdown.text("25:00");
         break;
-        case 1:
-          countdown.text("5:00");
-        break;
-      }
-
+      case 2:
+        countdown.text("10:00");
+      break;
+      case 1:
+        countdown.text("5:00");
+      break;
     }
 
-    var bindFunctions = function (button) {
-      button.longPomodoro.on("click",  function (event) {
-        setTimer(event, button, 3)
-      });
+  }
 
-      button.medPomodoro.on("click", function (event) {
-        setTimer(event, button, 2)
-      });
+  var bindFunctions = function (button) {
+    button.longPomodoro.on("click",  function (event) {
+      setTimer(event, button, 3)
+    });
 
-      button.shortPomodoro.on("click", function (event) {
-        setTimer(event, button, 1)
-      });
-    };
+    button.medPomodoro.on("click", function (event) {
+      setTimer(event, button, 2)
+    });
 
-    var init = function (button) {
-      bindFunctions(button);
-    };
+    button.shortPomodoro.on("click", function (event) {
+      setTimer(event, button, 1)
+    });
+  };
 
-    return {
-      init: init
-    }
+  var init = function (button) {
+    bindFunctions(button);
+  };
+
+  return {
+    init: init
+  }
 
   }) ();
 
 $(function (){
-  var button = {};
-  button.no = $('#no');
-  button.yes = $('#yes');
-  button.starts = $('#start');
-  button.countdown = $('#countdown')
-  button.longPomodoro = $('.twenty-five');
-  button.medPomodoro = $('.ten');
-  button.shortPomodoro = $('.five');
+  var button = {
+    no: $('#no'),
+    yes: $('#yes'),
+    starts: $('#start'),
+    countdown: $('#countdown'),
+    longPomodoro: $('.twenty-five'),
+    shortPomodoro: $('.five'),
+    medPomodoro: $('.ten')
+  };
   startClicked.init(button);
   timerSetting.init(button);
   NewsFeed.init(button);
@@ -231,6 +225,4 @@ $(function (){
 });
 
 // // Issues
-// -Initialized button should be changed
-// -tighter modules
-// -nothing in the global namespace
+// Tighter code within the modules

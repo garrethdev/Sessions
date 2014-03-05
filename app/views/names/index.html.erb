@@ -9,8 +9,12 @@
     </h3>
   </div>
 </div>
-<h2 class="primary-text"> What can you do in
-</h2>
+<h2 class="primary-text"> What can you do in</h2>
+  <%= form_for @user do |f| %>
+  <%= f.text_field :username%>
+  <%= f.password_field :password %>
+  <%= f.submit %>
+  <% end %>
 
 <div class="pomodoro-main-content">
     <div class="time-buttons time-buttons-structure">

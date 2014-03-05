@@ -27,7 +27,7 @@ var changeButtons = {
     $('#no').fadeToggle( "slow", "linear" );
     start.prop("disabled",false);
   },
-  showStartHideYesNo: function() {
+  showStartHideYesNo: function(button) {
     button.no.css("display", "none")
     button.yes.css("display", "none")
     button.starts.fadeToggle( "slow", "linear" )
@@ -50,9 +50,7 @@ var startClicked = (function (button) {
     var interval = setInterval(function() {
     var el = document.getElementById(element);
       if(time == -1) {
-        // countdown.fadeOut('slow', function() {
           countdown.text('Done?')
-          // $(".finished").css("display", 'inline')
           $('#start').fadeToggle( "slow", "linear" )
           $('#start').css("display", "none")
           changeButtons.hideYesandNo()
@@ -94,6 +92,11 @@ var buttonClicked = (function (button) {
     changeButtons.showStartHideYesNo(button);
   };
   var yesButton = function(event, button) {
+    if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
+      var newsfeed =  $('#textbox').val().split()
+      NewsFeed.texts.push(newsfeed)
+
+    }
     button.countdown.text("25:00")
     changeButtons.hideYesandNo();
     changeButtons.showStartHideYesNo(button)

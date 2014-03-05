@@ -65,12 +65,15 @@ Release 4:
 
 Release 5:
   -Testing
-    I. More five second tests
-    II. Habit Design to
+    I. More five second tests COMPLETE
+    II. Habit Design document
   -Refactor CSS
     I. refactor to one sheet
-  -Create feature for keeping track of pomodoras
+  -Create feature for keeping track of pomodoras COMPLETE
   -Create login feature
+    I. Simple Login COMPLETE
+    II. Bycrypt
+    III. Facebook Login
 
 
 

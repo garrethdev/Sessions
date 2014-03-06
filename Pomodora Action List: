@@ -9,10 +9,25 @@ Technology:
 
 Notes on Design:
 -Women prefer tints of colors
+  I. Colors with white in them
 -Women prefer softer colors
 -Use more rounded typefaces
 -Pay  closer to attention color choices
--Check out this brown for the header #c2a07b
+
+Form Design
+-When you have alot of fields its best to use zebra printing to distinguish the field
+-Be concise and clever
+  I. Dont be wordy
+  II. Allow them to cut out certain steps that arent relevant
+-Clear
+  I. Make it clear the action they have to do
+  II. Confirm their action so they dont click a bunch of time
+
+Shape in Form Design
+  I.Make forms skuemorphic so they have a high affordance
+  II. Make them look like they appear, a bigger box shows higher importance
+Color in Form Design
+  I. Color draws our eye so use it sparingly
 
 Release 1: COMPLETE
 -Get Timer Working COMPLETE
@@ -74,6 +89,7 @@ Release 5:
     I. Simple Login COMPLETE
     II. Bycrypt
     III. Facebook Login
+    IV. Sessions when logged in
 
 
 

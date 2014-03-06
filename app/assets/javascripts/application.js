@@ -50,6 +50,9 @@ var startClicked = (function (button) {
     var interval = setInterval(function() {
     var el = document.getElementById(element);
       if(time == -1) {
+        console.log(audio)
+        var audio = new Audio('/assets/ambiance.wav');
+        audio.play();
           countdown.text('Done?')
           $('#start').fadeToggle( "slow", "linear" )
           $('#start').css("display", "none")

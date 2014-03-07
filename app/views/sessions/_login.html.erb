@@ -1,5 +1,5 @@
-  <%= form_for @user do |f| %>
-  <%= f.text_field :username%>
-  <%= f.password_field :password %>
-  <%= f.submit 'login'%>
+  <%= form_tag sessions_path do  %>
+    <%= text_field_tag :email, params[:email] %>
+    <%= password_field_tag :password %>
+    <%= submit_tag 'login' %>
   <% end %>

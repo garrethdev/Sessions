@@ -13,9 +13,9 @@
   <%= form_for @user do |f| %>
   <%= f.text_field :username%>
   <%= f.password_field :password %>
-  <%= f.submit %>
+  <%= f.submit 'Created'%>
+  <%= f.submit 'login'%>
   <% end %>
-
 <div class="pomodoro-main-content">
     <div class="time-buttons time-buttons-structure">
       <button type="button" class="five pomodoro-choices "><h4> 5 minutes</h4> </button>

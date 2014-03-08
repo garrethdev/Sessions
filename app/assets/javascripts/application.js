@@ -20,6 +20,10 @@
 //for functions that are used alot, customize them
 //so they can accept different parameters
 
+$('#login-partial').click(function() {
+  console.log("this was hit")
+  // $("signup-form").replaceWith(<your html here>)
+  })
 var changeButtons = {
   hideYesandNo: function () {
     var start = $('#start');
@@ -50,7 +54,6 @@ var startClicked = (function (button) {
     var interval = setInterval(function() {
     var el = document.getElementById(element);
       if(time == -1) {
-        console.log(audio)
         var audio = new Audio('/assets/ambiance.wav');
         audio.play();
           countdown.text('Done?')
@@ -104,6 +107,9 @@ var buttonClicked = (function (button) {
     changeButtons.hideYesandNo();
     changeButtons.showStartHideYesNo(button)
     counter1++
+    if (counter1 == 3) {
+       login_page()
+    }
     id +=10
     $('.progressBar').attr("id", "max" + id)
     function progress(percent, element) {
@@ -228,6 +234,9 @@ $(function (){
   timerSetting.init(button);
   NewsFeed.init(button);
   buttonClicked.init(button);
+$('#login-partial').click(function() {
+  $('#login-form').css("display", "inline-block")
+  })
 });
 
 // // Issues

@@ -1,6 +1,6 @@
 Pomodora::Application.routes.draw do
-  # root :to => "Something#index"
   resources :users
+  resources :sessions
   match "/" => "names#index"
   get "names/index"
 

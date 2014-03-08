@@ -6,16 +6,19 @@
   <div class="menu-item1">
     <h3 id="about-pomodoro" class="menu-item">What's a Pomodora?</h3>
       <h3 id="about-title" class="menu-item">About
+      <% if current_user %>
+      <h3><%= current_user.username %>
+        <%= link_to "Logout", controller: "sessions",action: "destroy" %>
+        <% end %>
     </h3>
   </div>
 </div>
 <h2 class="primary-text"> What can you do in</h2>
-  <%= form_for @user do |f| %>
-  <%= f.text_field :username%>
-  <%= f.password_field :password %>
-  <%= f.submit 'Created'%>
-  <%= f.submit 'login'%>
-  <% end %>
+<h4 id ="login-partial">login</h4>
+
+<div id="signup-form"> <%= render 'sign_up' %> </div>
+<div id="login-form"> <%= render 'sessions/login' %></div>
+
 <div class="pomodoro-main-content">
     <div class="time-buttons time-buttons-structure">
       <button type="button" class="five pomodoro-choices "><h4> 5 minutes</h4> </button>

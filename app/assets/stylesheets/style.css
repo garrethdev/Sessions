@@ -99,6 +99,14 @@ div.pomodoro-main-content {
   margin: auto;
 }
 
+#login-form {
+  display:none;
+}
+
+#signup-form {
+  display:none;
+}
+
 /*.black-footer-styling {
   background-color: #222;
   -webkit-box-shadow: inset 0 0 1px rgba(255,255,255,0.4);

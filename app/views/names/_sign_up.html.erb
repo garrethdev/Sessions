@@ -1,6 +1,6 @@
   <%= form_for @user do |f| %>
-  <%= f.text_field :username%>
-  <%= f.text_field :email %>
-  <%= f.password_field :password %>
-  <%= f.submit 'Created'%>
+  <%= f.text_field :email, class: 'form-attributes', placeholder: 'email' %>
+  <%= f.text_field :username, class: 'form-attributes', placeholder: 'name'  %>
+  <%= f.password_field :password, class: 'form-attributes', placeholder: 'password' %>
+  <%= f.submit 'Create', class: 'submit-button'%>
   <% end %>

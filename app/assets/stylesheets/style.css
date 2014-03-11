@@ -144,11 +144,46 @@ hr {
   font-size: 24px;
   border: 1px solid #1C9F64;
   margin-left: 35px;
+  margin-top: -5px;
 }
+@import url(http://fonts.googleapis.com/css?family=Merriweather+Sans);
+ div.social-wrap button {
+    padding-right: 45px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: block;
+    background-size: 35px 35px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    border-radius: 4px;
+    color: white;
+    font-family:"Merriweather Sans", sans-serif;
+    font-size: 18px;
+    width: 255px;
+    border-bottom: 2px solid transparent;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    box-shadow: 0 4px 2px -2px gray;
+    text-shadow: rgba(0, 0, 0, .5) -1px -1px 0;
+    margin-top: -15px;
+    margin-bottom: 10px;
+    margin-right: 100px;
+}
+button#facebook {
+    border-color: #2d5073;
+    background-color: #3b5998;
+    background-image: url(http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png);
+}
+
+div.social-wrap button:active {
+    background-color: #222;
+}
+
 .member {
   position: relative;
   left: 260px;
-  top: 10px;
+  bottom: 16px;
 }
 
 .black-footer-styling {

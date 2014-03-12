@@ -1,6 +1,8 @@
 Pomodora::Application.routes.draw do
   resources :users
   resources :sessions
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
   match "/" => "names#index"
   get "names/index"
 

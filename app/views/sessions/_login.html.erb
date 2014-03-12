@@ -1,5 +1,5 @@
   <%= form_tag sessions_path do  %>
-    <%= text_field_tag :email, params[:email] %>
-    <%= password_field_tag :password %>
-    <%= submit_tag 'login' %>
+    <%= text_field_tag :email, params[:email] , :class => "email-login", placeholder: 'Email'%>
+    <%= password_field_tag 'password' %>
+    <%= submit_tag 'login', class: 'submit-button', id: 'submit-button' %>
   <% end %>

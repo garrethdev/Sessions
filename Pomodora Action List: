@@ -87,32 +87,28 @@ Release 5:
   -Create feature for keeping track of pomodoras COMPLETE
   -Create login feature
     I. Simple Login COMPLETE
-    II. Bycrypt
+    II. Bycrypt COMPLETE
     III. Facebook Login
-    IV. Sessions when logged in
+    IV. Sessions when logged in COMPLETE
+
+Incomplete Features:
+-Login password placeholder
+-Updating completed items showing what's been done in the newsfeed
+  I. Needs the name attached with the activity
+-Username is thrown in out of place when they login
 
 
 
--GO Over Heroku Problem with Tenor
--Go Over CSS Positioning
 
-
--Work on header
-  I. New Logo
-  II. Different color
--Refactor CSS of Main Content
-  I. Separate Buttons styling from content
-  II. Separate Bottom Feature
 
 
 
 
 Areas for Design Improvement:
 1. Fix CSS towards OOCSS
-2. Make bottom toolbar a darker blue
-3. Use the deep blue font http://pomodoro.me/images/dark_blue_bg.jpg for
-4. Larger Timer
-
+2. Create better color heirarchy
+  I. There's currently no dominant color as the black and the blue have
+  equal prominance
 
 
 
@@ -137,7 +133,7 @@ Release 4 and 5
 -Fix Que Feature
 -About Me
 -What is Pomodora
--Push to Heroku
+-Push to Heroku COMPLETE
 -Feedback
 -Sign in Form after two Pomodoras
 

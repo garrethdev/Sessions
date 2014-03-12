@@ -138,10 +138,8 @@ button {
 }
 
 .black-footer-styling {
-background-color: #6086AB;
+  background-color: #6086AB;
 }
-
-
 
 .progressBar {
   width: 65%;
@@ -149,7 +147,6 @@ background-color: #6086AB;
   border-radius: 5px;
   border: 1px solid #000;
 }
-
 
 .progressBar-styling {
   background-color: #A8B2C0;

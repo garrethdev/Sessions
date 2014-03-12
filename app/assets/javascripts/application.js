@@ -17,13 +17,9 @@
 //= require twitter/bootstrap
 
 
-//for functions that are used alot, customize them
-//so they can accept different parameters
 
-$('#login-partial').click(function() {
-  console.log("this was hit")
-  // $("signup-form").replaceWith(<your html here>)
-  })
+
+
 var changeButtons = {
   hideYesandNo: function () {
     var start = $('#start');

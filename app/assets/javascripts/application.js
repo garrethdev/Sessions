@@ -30,7 +30,7 @@ var changeButtons = {
   showStartHideYesNo: function(button) {
     button.no.css("display", "none")
     button.yes.css("display", "none")
-    button.starts.fadeToggle( "slow", "linear" )
+    button.starts.fadeToggle( "slow", "linear")
     button.starts.css("display", "inline")
     button.starts.prop("disabled", false)
   }
@@ -52,10 +52,10 @@ var startClicked = (function (button) {
       if(time == -1) {
         var audio = new Audio('/assets/ambiance.wav');
         audio.play();
-          countdown.text('Done?')
-          $('#start').fadeToggle( "slow", "linear" )
-          $('#start').css("display", "none")
-          changeButtons.hideYesandNo()
+        countdown.text('Done?')
+        $('#start').fadeToggle( "slow", "linear" )
+        $('#start').css("display", "none")
+        changeButtons.hideYesandNo()
 
         clearInterval(interval);
         return;
@@ -94,7 +94,20 @@ var buttonClicked = (function (button) {
     changeButtons.showStartHideYesNo(button);
   };
   var yesButton = function(event, button) {
-    if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
+    if ($('#pomodoroCountertext').text() == '0') {
+      $('.primary-content').css('display', 'none');
+      $('.signup-content').fadeToggle( "slow", "linear")
+      $('#login-partial').click(function() {
+        $('.signup-content').css('display', 'none');
+        $('#login-content').fadeToggle( "slow", "linear")
+      })
+      $('.submit-button').on("click", function() {
+        $('.signup-content').css('display', 'none')
+        $( $('#login-partial').css('display', 'none')
+        $('.primary-content').fadeToggle( "slow", "linear" );
+      })
+    }
+     if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
       var newsfeed =  $('#textbox').val().split()
       NewsFeed.texts.push(newsfeed)
 

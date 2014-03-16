@@ -103,15 +103,25 @@ var buttonClicked = (function (button) {
       })
       $('.submit-button').on("click", function() {
         $('.signup-content').css('display', 'none')
-        $( $('#login-partial').css('display', 'none')
+        $('#login-partial').css('display', 'none')
         $('.primary-content').fadeToggle( "slow", "linear" );
       })
     }
+
+    var textbox = $('#textbox')
+    var facebook = $('#facebook')
+    if (textbox.text().length >= 3 && facebook.text().length > 1 ) {
+      var inputstring =  $('#facebook').text() + " ~ " + textbox.text()
+      Newsfeed.texts.push(inputstring)
+      //Find the current index displayed
+      //push it to the next element in the array
+    }
+
      if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
       var newsfeed =  $('#textbox').val().split()
       NewsFeed.texts.push(newsfeed)
-
     }
+
     button.countdown.text("25:00")
     changeButtons.hideYesandNo();
     changeButtons.showStartHideYesNo(button)
@@ -248,5 +258,3 @@ $('#login-partial').click(function() {
   })
 });
 
-// // Issues
-// Tighter code within the modules

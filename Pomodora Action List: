@@ -91,11 +91,19 @@ Release 5:
     III. Facebook Login
     IV. Sessions when logged in COMPLETE
 
+Sun Mar 16-17th:
+-Finish Fixing facebook login
+-Get code hosted on heroku
+-register domain
+-Fix password placeholder
+-Update newsfeed feature
+
 Incomplete Features:
 -Login password placeholder
 -Updating completed items showing what's been done in the newsfeed
   I. Needs the name attached with the activity
--Username is thrown in out of place when they login
+-Username is thrown in out of place when they login COM
+-Login is not working because username should be name in the database but username must be changed everywhere COM
 
 
 

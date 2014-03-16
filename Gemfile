@@ -26,9 +26,11 @@ group :production do
 end
 gem 'therubyracer'
 gem 'jquery-rails'
+gem "oa-oauth"
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
-
+gem 'devise'
+gem 'omniauth-facebook'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

@@ -33,7 +33,7 @@ gem 'devise', github: 'plataformatec/devise'
 
 gem 'omniauth-facebook'
 gem 'certified'
-# gem 'protected_attributes'
+gem 'protected_attributes'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

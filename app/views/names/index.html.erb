@@ -29,8 +29,7 @@
   <div class="signup-content">
     <h2 id="account">  Create your Account </h2>
     <hr> </hr>
-    <div class="social-wrap a"><button id="facebook"><div class="social-wrap a"><button id="facebook">
-    </button>
+    <div class="social-wrap a"><button id="facebook"><div class="social-wrap a"><button id="facebook"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
     </button>
     </div>
     <div id="signup-form"> <%= render 'sign_up' %> </div>

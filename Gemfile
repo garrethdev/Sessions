@@ -32,6 +32,7 @@ gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'devise', github: 'plataformatec/devise'
 
 gem 'omniauth-facebook'
+gem 'certified'
 # gem 'protected_attributes'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

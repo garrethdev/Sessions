@@ -112,9 +112,8 @@ var buttonClicked = (function (button) {
     var facebook = $('#facebook')
     if (textbox.text().length >= 3 && facebook.text().length > 1 ) {
       var inputstring =  $('#facebook').text() + " ~ " + textbox.text()
-      Newsfeed.texts.push(inputstring)
-      //Find the current index displayed
-      //push it to the next element in the array
+      var index = Newsfeed.counterDisplay + 1
+      NewsFeed.texts.splice(index,0, inputstring)
     }
 
      if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
@@ -182,16 +181,16 @@ var NewsFeed = {
   },
   texts: [["Jenna ~ Read two chapters"], ["Mary ~ Write a Cover Letter"], ["Dave ~ Practice Designing"], ["Alex ~ Outline Blog Post"],["Jamie ~ finish reading the news"]],
   textdisplay: document.getElementById('newsfeed'),
+  counterDisplay: 0,
   displays: function () {
-    var counterDisplay = 0
     var feed = document.getElementById('newsfeed')
       setInterval(function(){
         $('#newsfeed').css("display", "none")
-        feed.innerHTML = NewsFeed.texts[counterDisplay][0]
+        feed.innerHTML = NewsFeed.texts[NewsFeed.counterDisplay][0]
         $('#newsfeed').show( 1500, function() {});
-        counterDisplay++
-        if (counterDisplay == NewsFeed.texts.length) {
-            counterDisplay = 0;
+        NewsFeed.counterDisplay++
+        if (NewsFeed.counterDisplay == NewsFeed.texts.length) {
+            NewsFeed.counterDisplay = 0;
           }
         },11000)
       }

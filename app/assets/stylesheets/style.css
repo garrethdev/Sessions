@@ -8,6 +8,7 @@ body {
   position: relative;
   margin-left: 50px;
   margin-top: -20px;
+  width: 500px;
 }
 .completed {
   background-color: #FAF5F6;

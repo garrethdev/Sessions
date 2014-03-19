@@ -19,7 +19,7 @@ gem "oa-oauth"
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'devise', github: 'plataformatec/devise'
-
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'certified'
 gem 'protected_attributes'

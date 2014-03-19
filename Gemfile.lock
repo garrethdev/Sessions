@@ -161,6 +161,7 @@ DEPENDENCIES
   devise!
   jquery-rails
   oa-oauth
+  omniauth
   omniauth-facebook
   pg
   protected_attributes

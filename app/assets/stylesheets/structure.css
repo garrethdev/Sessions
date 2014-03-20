@@ -7,7 +7,7 @@ body {
   height: 60px;
   background-color: #c5c2bc;
   top: 0px;
-  box-shadow: 0 0px 0px 2px gray;
+  box-shadow: 0 0px 0px 1px gray;
 }
 #pomodoroCounter {
   height: 60px;
@@ -155,7 +155,6 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   box-shadow: 0 1px 0 rgba(255,255,255,0.08),inset 5px 1px rgba(255,255,255,0.06);
-  background-color: #c5c2bc;
 }
 .progressBar div {
   height: 100%;

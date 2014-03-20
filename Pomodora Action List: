@@ -85,10 +85,10 @@ Release 5:
   -Refactor CSS
     I. refactor to one sheet
   -Create feature for keeping track of pomodoras COMPLETE
-  -Create login feature
+  -Create login feature COMPLETE
     I. Simple Login COMPLETE
     II. Bycrypt COMPLETE
-    III. Facebook Login
+    III. Facebook Login COMPLETE
     IV. Sessions when logged in COMPLETE
 
 Sun Mar 16-17th:

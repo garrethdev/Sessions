@@ -29,7 +29,7 @@ body {
   padding-left: 2px;
   display: inline;
   color: #FFF;
-  text-decoration: underline;
+  border-bottom: 3px Solid white;
 }
 
  #about-title {

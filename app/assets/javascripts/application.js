@@ -24,9 +24,9 @@ var appcontroller = {
     buttonClicked.init(selectors);
   },
   hideYesandNo: function (selectors) {
-    selectors.yes.fadeToggle( "slow", "linear" );
-    selectors.no.fadeToggle( "slow", "linear" );
-    selectors.start.prop("disabled",false);
+    $('#yes').fadeToggle( "slow", "linear" );
+    $('#no').fadeToggle( "slow", "linear" );
+    $('#start').prop("disabled",false);
   },
   showStartHideYesNo: function(selectors) {
     selectors.no.css("display", "none")
@@ -42,15 +42,16 @@ var startClicked = (function (selectors) {
   counter1 = 0;
   var triggerCountdown = function (event, selectors){
     selectors.starts.prop("disabled",true)
-    var string = $('#countdown').text().replace(':00','')
+    var string = selectors.countdown.text().replace(':00','')
     var string = Number(string)
-    countdown("countdown", 0, 01);
+    countdown("countdown", 0, 01, selectors);
   };
-  var countdown = function (element, minutes, seconds) {
+  var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
     var countdown = $('#countdown');
-    var interval = setInterval(function() {
-    var el = document.getElementById(element);
+    var interval = setInterval(function(selectors) {
+
+      var el = document.getElementById(element);
       if(time == -1) {
         var audio = new Audio('/assets/ambiance.wav');
         audio.play();
@@ -92,14 +93,14 @@ var buttonClicked = (function (selectors) {
   var id = 0;
   var noButton = function(event, selectors) {
     selectors.countdown.text("25:00")
-    appcontroller.hideYesandNo();
+    appcontroller.hideYesandNo(selectors);
     appcontroller.showStartHideYesNo(selectors);
   };
   var yesButton = function(event, selectors) {
 
     // check if the user needs to login
     var loginCheck = function (selectors) {
-      if (selectors.counterText.text() == '1') {
+      if (selectors.counterText.text() == '5') {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {
@@ -115,30 +116,32 @@ var buttonClicked = (function (selectors) {
         })
       }
     }
-    loginCheck()
+    loginCheck(selectors)
 
 
     //Check if the user needs to login
-    var addNewsFeeditem = function () {
+    var addNewsFeeditem = function (selectors) {
       var textbox = $('#textbox')
       var facebook = $('#facebook')
-      if (textbox.text().length >= 3 && facebook.text().length > 1 ) {
-        var inputstring =  $('#facebook').text() + " ~ " + textbox.text()
-        var index = Newsfeed.counterDisplay + 1
+      facebook.text("Garreth")
+      var inputstring = []
+      if (textbox.val().length >= 3 && facebook.text().length > 1 ) {
+        inputstring[0] =  facebook.text() + " ~ " + textbox.val()
+        var index = NewsFeed.counterDisplay + 1
         NewsFeed.texts.splice(index,0, inputstring)
       }
     }
-    addNewsFeeditem()
+    addNewsFeeditem(selectors)
 
 
     //Show start button
-    var showStartButton = function (){
+    var showStartButton = function (selectors){
       selectors.countdown.text("25:00")
-      appcontroller.hideYesandNo();
+      appcontroller.hideYesandNo(selectors);
       appcontroller.showStartHideYesNo(selectors)
       counter1++
     }
-    showStartButton()
+    showStartButton(selectors)
 
 
     //determine increase of pomodoro count
@@ -157,13 +160,13 @@ var buttonClicked = (function (selectors) {
         progress(max, bar);
       });
     }
-    increaseProgressBar()
+    increaseProgressBar(selectors)
 
     //pomodoros display
     var correctPomodoros = function () {
       $('#pomodoroCountertext').text(counter1)
     }
-    correctPomodoros()
+    correctPomodoros(selectors)
   }
 
   var progressBarCheck = function (progressBarWidth, element) {
@@ -200,6 +203,7 @@ var NewsFeed = {
   textdisplay: document.getElementById('newsfeed'),
   counterDisplay: 0,
   displays: function () {
+    console.log(startClicked)
     var feed = document.getElementById('newsfeed')
       setInterval(function(){
         $('#newsfeed').css("display", "none")
@@ -215,17 +219,16 @@ var NewsFeed = {
 
 var timerSetting = (function (selectors) {
   var setTimer = function (event, selectors, length) {
-    var countdown = $('#countdown');
     switch (length)
     {
       case 3:
-        countdown.text("25:00");
+        selectors.countdown.text("25:00");
         break;
       case 2:
-        countdown.text("10:00");
+        selectors.countdown.text("10:00");
       break;
       case 1:
-        countdown.text("5:00");
+        selectors.countdown.text("5:00");
       break;
     }
 
@@ -256,7 +259,7 @@ var timerSetting = (function (selectors) {
   }) ();
 
 $(function (){
-  var selectors = {
+  selectors = {
     no: $('#no'),
     yes: $('#yes'),
     starts: $('#start'),
@@ -268,8 +271,9 @@ $(function (){
     primaryContent: $('.primary-content'),
     signupContent: $('.signup-content'),
     loginPartial: $('#login-partial'),
-    loginContent:  $('#login-content')
-    submitButton:  $('#submit-button')
+    loginContent:  $('#login-content'),
+    submitButton:  $('#submit-button'),
+    counter: $('#countdown')
   };
   appcontroller.init(selectors)
 $('#login-partial').click(function() {

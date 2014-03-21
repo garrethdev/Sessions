@@ -170,7 +170,7 @@ button {
 #image-icon {
   width: 40px;
   border-right: 1px solid #000;
-  height: 50px;
+  height: 39px;
 }
 
 .menu-item1 {
@@ -225,5 +225,5 @@ button {
 #newsfeed {
   position: relative;
   left: 48px;
-  bottom: 40px;
+  bottom: 28px;
 }*/*/*/

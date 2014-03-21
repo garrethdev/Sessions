@@ -14,6 +14,14 @@ Notes on Design:
 -Use more rounded typefaces
 -Pay  closer to attention color choices
 
+
+NueroScience of Color:
+-Matisse and Cezanne didnt work in a piecemeal approach of finishing one section and then
+moving onto the next
+-Nor Did they create the structure leave it alone and then fill in with color
+-Structure and color must be created together
+-
+
 Form Design
 -When you have alot of fields its best to use zebra printing to distinguish the field
 -Be concise and clever
@@ -28,6 +36,35 @@ Shape in Form Design
   II. Make them look like they appear, a bigger box shows higher importance
 Color in Form Design
   I. Color draws our eye so use it sparingly
+
+Habit Engine:
+-External Trigger
+
+
+Lacking:
+-Commitment Phase
+  I. Login doesnt work completely yet
+    A. Login resets every time they login
+    B. Regular login may not work yet
+  II.No way of storing what they've done
+
+-External Trigger
+  I. Timer in top part
+
+Good:
+-Variable Reward
+  I. Name being displayed
+  II. Pomodoro Count
+
+Features Missing:
+-Normal Login working
+-Tab at the top
+-Keeping track of the pomodoros completed
+-options displaying anything
+-User being added to the displayed items COM
+-Thickness of white lines under options COM
+-Newsfeed divider being too long COM
+
 
 Release 1: COMPLETE
 -Get Timer Working COMPLETE
@@ -92,11 +129,18 @@ Release 5:
     IV. Sessions when logged in COMPLETE
 
 Sun Mar 16-17th:
--Finish Fixing facebook login
--Get code hosted on heroku
--register domain
+-Finish Fixing facebook login COM
+-Get code hosted on heroku COM
+-register domain COM
 -Fix password placeholder
 -Update newsfeed feature
+
+Mar 20-21st:
+-Go through potential bugs
+-Check newsfeed feature
+-refactor Js  COM
+-Get domain properly hosted COM
+-Check regular login
 
 Incomplete Features:
 -Login password placeholder

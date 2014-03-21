@@ -42,7 +42,7 @@ var startClicked = (function (button) {
     button.starts.prop("disabled",true)
     var string = $('#countdown').text().replace(':00','')
     var string = Number(string)
-    countdown("countdown", 0, 02);
+    countdown("countdown", 0, 01);
   };
   var countdown = function (element, minutes, seconds) {
     var time = minutes*60 + seconds;
@@ -116,10 +116,10 @@ var buttonClicked = (function (button) {
       NewsFeed.texts.splice(index,0, inputstring)
     }
 
-     if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
-      var newsfeed =  $('#textbox').val().split()
-      NewsFeed.texts.push(newsfeed)
-    }
+    //  if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
+    //   var newsfeed =  $('#textbox').val().split()
+    //   NewsFeed.texts.push(newsfeed)
+    // }
 
     button.countdown.text("25:00")
     changeButtons.hideYesandNo();
@@ -193,8 +193,8 @@ var NewsFeed = {
             NewsFeed.counterDisplay = 0;
           }
         },11000)
-      }
-    }
+  }
+}
 
 var timerSetting = (function (button) {
   var setTimer = function (event, button, length) {
@@ -256,4 +256,3 @@ $('#login-partial').click(function() {
   $('#login-form').css("display", "inline-block")
   })
 });
-

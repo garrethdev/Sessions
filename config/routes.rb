@@ -1,16 +1,18 @@
 Pomodora::Application.routes.draw do
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+
   resources :users
   resources :sessions
-  match '/signin', :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
-  match "/" => "names#index"
+  get '/signin', :to => 'sessions#new'
+  get '/signout', :to => 'sessions#destroy'
+  get "/" => "names#index"
   get "names/index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
+  #   get 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:

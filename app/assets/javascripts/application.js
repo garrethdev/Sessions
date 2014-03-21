@@ -16,33 +16,35 @@
 //= require_tree .
 //= require twitter/bootstrap
 
-
-
-
-
-var changeButtons = {
-  hideYesandNo: function () {
-    var start = $('#start');
-    $('#yes').fadeToggle( "slow", "linear" );
-    $('#no').fadeToggle( "slow", "linear" );
-    start.prop("disabled",false);
+var appcontroller = {
+  init: function (selectors) {
+    startClicked.init(selectors);
+    timerSetting.init(selectors);
+    NewsFeed.init(selectors);
+    buttonClicked.init(selectors);
   },
-  showStartHideYesNo: function(button) {
-    button.no.css("display", "none")
-    button.yes.css("display", "none")
-    button.starts.fadeToggle( "slow", "linear")
-    button.starts.css("display", "inline")
-    button.starts.prop("disabled", false)
+  hideYesandNo: function (selectors) {
+    selectors.yes.fadeToggle( "slow", "linear" );
+    selectors.no.fadeToggle( "slow", "linear" );
+    selectors.start.prop("disabled",false);
+  },
+  showStartHideYesNo: function(selectors) {
+    selectors.no.css("display", "none")
+    selectors.yes.css("display", "none")
+    selectors.starts.fadeToggle( "slow", "linear")
+    selectors.starts.css("display", "inline")
+    selectors.starts.prop("disabled", false)
   }
 }
-var startClicked = (function (button) {
+
+var startClicked = (function (selectors) {
   counter = 0;
   counter1 = 0;
-  var triggerCountdown = function (event, button){
-    button.starts.prop("disabled",true)
+  var triggerCountdown = function (event, selectors){
+    selectors.starts.prop("disabled",true)
     var string = $('#countdown').text().replace(':00','')
     var string = Number(string)
-    countdown("countdown", 0, 02);
+    countdown("countdown", 0, 01);
   };
   var countdown = function (element, minutes, seconds) {
     var time = minutes*60 + seconds;
@@ -55,7 +57,7 @@ var startClicked = (function (button) {
         countdown.text('Done?')
         $('#start').fadeToggle( "slow", "linear" )
         $('#start').css("display", "none")
-        changeButtons.hideYesandNo()
+        appcontroller.hideYesandNo()
 
         clearInterval(interval);
         return;
@@ -70,14 +72,14 @@ var startClicked = (function (button) {
     }, 1000);
   };
 
-  var bindFunctions = function (button) {
-    button.starts.on("click", function (event){
-      triggerCountdown(event, button);
+  var bindFunctions = function (selectors) {
+    selectors.starts.on("click", function (event){
+      triggerCountdown(event, selectors);
     });
   };
 
-  var init = function (button) {
-    bindFunctions(button);
+  var init = function (selectors) {
+    bindFunctions(selectors);
   };
 
   return {
@@ -86,56 +88,80 @@ var startClicked = (function (button) {
   };
 }) ();
 
-var buttonClicked = (function (button) {
+var buttonClicked = (function (selectors) {
   var id = 0;
-  var noButton = function(event, button) {
-    button.countdown.text("25:00")
-    changeButtons.hideYesandNo();
-    changeButtons.showStartHideYesNo(button);
+  var noButton = function(event, selectors) {
+    selectors.countdown.text("25:00")
+    appcontroller.hideYesandNo();
+    appcontroller.showStartHideYesNo(selectors);
   };
-  var yesButton = function(event, button) {
-    if ($('#pomodoroCountertext').text() == '0') {
-      $('.primary-content').css('display', 'none');
-      $('.signup-content').fadeToggle( "slow", "linear")
-      $('#login-partial').click(function() {
-        $('.signup-content').css('display', 'none');
-        $('#login-content').fadeToggle( "slow", "linear")
-      })
-      $('.submit-button').on("click", function() {
-        $('.signup-content').css('display', 'none')
-        $( $('#login-partial').css('display', 'none')
-        $('.primary-content').fadeToggle( "slow", "linear" );
-      })
-    }
-     if ($('#textbox').val().length > 1){ //Also add check for if the user is logged in
-      var newsfeed =  $('#textbox').val().split()
-      NewsFeed.texts.push(newsfeed)
+  var yesButton = function(event, selectors) {
 
-    }
-    button.countdown.text("25:00")
-    changeButtons.hideYesandNo();
-    changeButtons.showStartHideYesNo(button)
-    counter1++
-    if (counter1 == 3) {
-       login_page()
-    }
-    id +=10
-    $('.progressBar').attr("id", "max" + id)
-    function progress(percent, element) {
-      var progressBarWidth = percent * element.width() / 100;
-      buttonClicked.progressBarCheck(progressBarWidth, element)
-    };
+    // check if the user needs to login
+    var loginCheck = function (selectors) {
+      if (selectors.counterText.text() == '1') {
+        selectors.primaryContent.css('display', 'none');
+        selectors.signupContent.fadeToggle( "slow", "linear")
+        selectors.loginPartial.click(function() {
+          selectors.signupContent.css('display', 'none');
+          selectors.loginContent.fadeToggle( "slow", "linear")
+        })
 
-    $('.progressBar').each(function() {
-      var bar = $(this);
-      var max = $(this).attr('id');
-      max = max.substring(3);
-          console.log("max" + max)
-      progress(max, bar);
-    });
+        selectors.submitButton.on("click", function() {
+          selectors.signupContent.css('display', 'none')
+          selectors.signupContent.css('display', 'none')
+          selectors.loginPartial.css('display', 'none')
+          selectors.primaryContent.fadeToggle( "slow", "linear" );
+        })
+      }
+    }
+    loginCheck()
 
+
+    //Check if the user needs to login
+    var addNewsFeeditem = function () {
+      var textbox = $('#textbox')
+      var facebook = $('#facebook')
+      if (textbox.text().length >= 3 && facebook.text().length > 1 ) {
+        var inputstring =  $('#facebook').text() + " ~ " + textbox.text()
+        var index = Newsfeed.counterDisplay + 1
+        NewsFeed.texts.splice(index,0, inputstring)
+      }
+    }
+    addNewsFeeditem()
+
+
+    //Show start button
+    var showStartButton = function (){
+      selectors.countdown.text("25:00")
+      appcontroller.hideYesandNo();
+      appcontroller.showStartHideYesNo(selectors)
+      counter1++
+    }
+    showStartButton()
+
+
+    //determine increase of pomodoro count
+    var increaseProgressBar = function () {
+      id +=10
+      $('.progressBar').attr("id", "max" + id)
+      function progress(percent, element) {
+        var progressBarWidth = percent * element.width() / 100;
+        buttonClicked.progressBarCheck(progressBarWidth, element)
+      };
+
+      $('.progressBar').each(function() {
+        var bar = $(this);
+        var max = $(this).attr('id');
+        max = max.substring(3);
+        progress(max, bar);
+      });
+    }
+    increaseProgressBar()
+
+    //pomodoros display
     var correctPomodoros = function () {
-    $('#pomodoroCountertext').text(counter1)
+      $('#pomodoroCountertext').text(counter1)
     }
     correctPomodoros()
   }
@@ -146,17 +172,17 @@ var buttonClicked = (function (button) {
     }
   }
 
-  var bindFunctions = function (button) {
-    button.no.on("click",  function (event) {
-      noButton(event, button);
+  var bindFunctions = function (selectors) {
+    selectors.no.on("click",  function (event) {
+      noButton(event, selectors);
     })
-    button.yes.on("click",  function (event) {
-      yesButton(event, button);
+    selectors.yes.on("click",  function (event) {
+      yesButton(event, selectors);
     })
   };
 
-  var init = function (button) {
-    bindFunctions(button);
+  var init = function (selectors) {
+    bindFunctions(selectors);
   };
 
   return {
@@ -172,23 +198,23 @@ var NewsFeed = {
   },
   texts: [["Jenna ~ Read two chapters"], ["Mary ~ Write a Cover Letter"], ["Dave ~ Practice Designing"], ["Alex ~ Outline Blog Post"],["Jamie ~ finish reading the news"]],
   textdisplay: document.getElementById('newsfeed'),
+  counterDisplay: 0,
   displays: function () {
-    var counterDisplay = 0
     var feed = document.getElementById('newsfeed')
       setInterval(function(){
         $('#newsfeed').css("display", "none")
-        feed.innerHTML = NewsFeed.texts[counterDisplay][0]
+        feed.innerHTML = NewsFeed.texts[NewsFeed.counterDisplay][0]
         $('#newsfeed').show( 1500, function() {});
-        counterDisplay++
-        if (counterDisplay == NewsFeed.texts.length) {
-            counterDisplay = 0;
+        NewsFeed.counterDisplay++
+        if (NewsFeed.counterDisplay == NewsFeed.texts.length) {
+            NewsFeed.counterDisplay = 0;
           }
         },11000)
-      }
-    }
+  }
+}
 
-var timerSetting = (function (button) {
-  var setTimer = function (event, button, length) {
+var timerSetting = (function (selectors) {
+  var setTimer = function (event, selectors, length) {
     var countdown = $('#countdown');
     switch (length)
     {
@@ -205,22 +231,22 @@ var timerSetting = (function (button) {
 
   }
 
-  var bindFunctions = function (button) {
-    button.longPomodoro.on("click",  function (event) {
-      setTimer(event, button, 3)
+  var bindFunctions = function (selectors) {
+    selectors.longPomodoro.on("click",  function (event) {
+      setTimer(event, selectors, 3)
     });
 
-    button.medPomodoro.on("click", function (event) {
-      setTimer(event, button, 2)
+    selectors.medPomodoro.on("click", function (event) {
+      setTimer(event, selectors, 2)
     });
 
-    button.shortPomodoro.on("click", function (event) {
-      setTimer(event, button, 1)
+    selectors.shortPomodoro.on("click", function (event) {
+      setTimer(event, selectors, 1)
     });
   };
 
-  var init = function (button) {
-    bindFunctions(button);
+  var init = function (selectors) {
+    bindFunctions(selectors);
   };
 
   return {
@@ -230,23 +256,23 @@ var timerSetting = (function (button) {
   }) ();
 
 $(function (){
-  var button = {
+  var selectors = {
     no: $('#no'),
     yes: $('#yes'),
     starts: $('#start'),
     countdown: $('#countdown'),
     longPomodoro: $('.twenty-five'),
     shortPomodoro: $('.five'),
-    medPomodoro: $('.ten')
+    medPomodoro: $('.ten'),
+    counterText: $('#pomodoroCountertext'),
+    primaryContent: $('.primary-content'),
+    signupContent: $('.signup-content'),
+    loginPartial: $('#login-partial'),
+    loginContent:  $('#login-content')
+    submitButton:  $('#submit-button')
   };
-  startClicked.init(button);
-  timerSetting.init(button);
-  NewsFeed.init(button);
-  buttonClicked.init(button);
+  appcontroller.init(selectors)
 $('#login-partial').click(function() {
   $('#login-form').css("display", "inline-block")
   })
 });
-
-// // Issues
-// Tighter code within the modules

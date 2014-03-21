@@ -8,6 +8,7 @@ body {
   position: relative;
   margin-left: 50px;
   margin-top: -20px;
+  width: 500px;
 }
 .completed {
   background-color: #FAF5F6;
@@ -25,11 +26,10 @@ body {
   font-size: 35px;
 }
 .menu-item {
-  border-style: solid;
-  border-width: 0px 0px 0px 2px;
   padding-left: 2px;
   display: inline;
-  color: #5D8DD1;
+  color: #FFF;
+  text-decoration: underline;
 }
 
  #about-title {

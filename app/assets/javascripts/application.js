@@ -50,8 +50,7 @@ var startClicked = (function (selectors) {
     var time = minutes*60 + seconds;
     var countdown = $('#countdown');
     var interval = setInterval(function(selectors) {
-
-      var el = document.getElementById(element);
+    var el = document.getElementById(element);
       if(time == -1) {
         var audio = new Audio('/assets/ambiance.wav');
         audio.play();
@@ -59,7 +58,6 @@ var startClicked = (function (selectors) {
         $('#start').fadeToggle( "slow", "linear" )
         $('#start').css("display", "none")
         appcontroller.hideYesandNo()
-
         clearInterval(interval);
         return;
       }
@@ -100,7 +98,7 @@ var buttonClicked = (function (selectors) {
 
     // check if the user needs to login
     var loginCheck = function (selectors) {
-      if (selectors.counterText.text() == '5') {
+      if (selectors.counterText.text() == '1') {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {
@@ -118,12 +116,23 @@ var buttonClicked = (function (selectors) {
     }
     loginCheck(selectors)
 
+    var storePomodoros = function (selectors) {
+      var facebook = $('#facebook')
+      facebook.text("Hello Darkness My Old Friend")
+      if(selectors.counterText.text() >= '1' && facebook.text().length  ) {
+        $.ajax({
+          type: 'POST',
+          beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
+          url: '/users/increment'
+        })
+       }
+    }
+    storePomodoros(selectors)
 
     //Check if the user needs to login
     var addNewsFeeditem = function (selectors) {
       var textbox = $('#textbox')
       var facebook = $('#facebook')
-      facebook.text("Garreth")
       var inputstring = []
       if (textbox.val().length >= 3 && facebook.text().length > 1 ) {
         inputstring[0] =  facebook.text() + " ~ " + textbox.val()
@@ -133,7 +142,6 @@ var buttonClicked = (function (selectors) {
     }
     addNewsFeeditem(selectors)
 
-
     //Show start button
     var showStartButton = function (selectors){
       selectors.countdown.text("25:00")
@@ -142,7 +150,6 @@ var buttonClicked = (function (selectors) {
       counter1++
     }
     showStartButton(selectors)
-
 
     //determine increase of pomodoro count
     var increaseProgressBar = function () {
@@ -226,10 +233,10 @@ var timerSetting = (function (selectors) {
         break;
       case 2:
         selectors.countdown.text("10:00");
-      break;
+        break;
       case 1:
         selectors.countdown.text("5:00");
-      break;
+        break;
     }
 
   }

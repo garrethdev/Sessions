@@ -4,6 +4,7 @@ Pomodora::Application.routes.draw do
   resources :users
   resources :sessions
   get '/signin', :to => 'sessions#new'
+  post '/users/increment' => 'users#increment'
   get '/signout', :to => 'sessions#destroy'
   get "/" => "names#index"
   get "names/index"

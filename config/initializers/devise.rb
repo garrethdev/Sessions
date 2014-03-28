@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '071fb7f125f5beddf734943f03db4f5fa1a941bcb38cad88ac45d079546957dc1e395f7d0b11cce06140c71e5486a8f4f693f5b6e067c63d7e68de16a505fd87'
+  config.secret_key = 'abb6a5703e5771218fed098a965dd877cb523bfea1c54b9fd292b57ee9834aac4848356416ab54569583e52fae66db03fbec4115765c63597d379e62e788ad16'
   require "omniauth-facebook"
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE if Rails.env.development?
   config.omniauth :facebook, "656625071063829", "8765824c7042018fec61eaa2382d7230",

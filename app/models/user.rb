@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   # attr_accessible :email, :password, :password_confirmation, :remember_me, :name
   has_secure_password
-  # attr_accessible :name, :password, :email
+  attr_accessible :name, :password, :email
 
 
   def self.find_for_facebook_oauth(auth)
@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
     end
   end
 
-   def self.new_with_session(params, session)
+  def self.new_with_session(params, session)
     if session["devise.user_attributes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
         user.attributes = params

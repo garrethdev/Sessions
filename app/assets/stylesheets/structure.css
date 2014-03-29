@@ -7,7 +7,7 @@ body {
   height: 60px;
   background-color: #c5c2bc;
   top: 0px;
-  box-shadow: 0 0px 0px 1px gray;
+  border-bottom: 1px Solid gray;
 }
 #pomodoroCounter {
   height: 60px;
@@ -175,7 +175,7 @@ button {
 
 .menu-item1 {
   position: relative;
-  left: 950px;
+  left: 920px;
   color: #010259;
   top: -20px;
 }

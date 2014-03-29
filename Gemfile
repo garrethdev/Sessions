@@ -20,6 +20,7 @@ gem "oa-oauth"
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
+gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'certified'
 gem 'protected_attributes'

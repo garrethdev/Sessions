@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   end
 
   def increment
-    p parameters
     @user = User.find_by email: (params[:email])
     @user.increment(:pomodoro,by = 1)
     render :nothing => true

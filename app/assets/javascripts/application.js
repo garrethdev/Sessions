@@ -67,6 +67,7 @@ var startClicked = (function (selectors) {
       if (seconds < 10) seconds = "0" + seconds;
       var text = minutes + ':' + seconds;
       el.innerHTML = text;
+      $('title').text(text)
       time--;
     }, 1000);
   };
@@ -118,7 +119,7 @@ var buttonClicked = (function (selectors) {
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
-      facebook.text("Hello Darkness My Old Friend")
+      // facebook.text("Hello Darkness My Old Friend")
       if(selectors.counterText.text() >= '1' && facebook.text().length  ) {
         $.ajax({
           type: 'POST',

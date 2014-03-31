@@ -99,7 +99,7 @@ var buttonClicked = (function (selectors) {
 
     // check if the user needs to login
     var loginCheck = function (selectors) {
-      if (selectors.counterText.text() == '1') {
+      if (selectors.counterText.text() == '10') {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {

@@ -120,7 +120,8 @@ var buttonClicked = (function (selectors) {
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
       // facebook.text("Hello Darkness My Old Friend")
-      if(selectors.counterText.text() >= '1' && facebook.text().length  ) {
+      if(+selectors.counterText.text() >= 0) {
+        console.log("store counterText")
         $.ajax({
           type: 'POST',
           beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -172,7 +173,8 @@ var buttonClicked = (function (selectors) {
 
     //pomodoros display
     var correctPomodoros = function () {
-      $('#pomodoroCountertext').text(counter1)
+        var text = +$('#pomodoroCountertext').text() + 1
+        $('#pomodoroCountertext').text(text)
     }
     correctPomodoros(selectors)
   }

@@ -1,5 +1,5 @@
 Pomodora::Application.routes.draw do
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",  :registrations => "registrations"}
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",   :registrations => "users"}
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   resources :users
   resources :sessions
@@ -8,6 +8,8 @@ Pomodora::Application.routes.draw do
   get '/signout', :to => 'sessions#destroy'
   get "/" => "names#index"
   get "names/index"
+
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

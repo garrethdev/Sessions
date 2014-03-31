@@ -49,8 +49,6 @@ Lacking:
     B. Regular login may not work yet
   II.No way of storing what they've done
 
--External Trigger
-  I. Timer in top part
 
 Good:
 -Variable Reward
@@ -119,7 +117,8 @@ Release 5:
   -Testing
     I. More five second tests COMPLETE
     II. Habit Design document
-  -Refactor CSS
+    III. Add Google Analytics COM
+  -Refactor
     I. refactor to one sheet
   -Create feature for keeping track of pomodoras COMPLETE
   -Create login feature COMPLETE
@@ -128,22 +127,25 @@ Release 5:
     III. Facebook Login COMPLETE
     IV. Sessions when logged in COMPLETE
 
+Release 6th:
+1. Fix Normal Login
+  I. https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
+  II. Figure out how current_user works
+  III. Figure out how session works
+2. Fix Normal sign up
+3. Reset Pomodoro at the end of each day
+4. Design:
+ I.Fix Page width
+ II. Underline of what's a pomodoro COM
+ III. Test out product again using  http://coglode.com/
+
+
 Tue-Wed Mar 25-26th:
 -Fix last bug of page scrolling too long
 -meet with russ
 -Create timer in tab
 -save pomodoro's
 -go over normal login
-
-
-
-
-Sun Mar 16-17th:
--Finish Fixing facebook login COM
--Get code hosted on heroku COM
--register domain COM
--Fix password placeholder
--Update newsfeed feature
 
 Mar 20-21st:
 -Go through potential bugs
@@ -152,52 +154,20 @@ Mar 20-21st:
 -Get domain properly hosted COM
 -Check regular login
 
-Incomplete Features:
--Login password placeholder
--Updating completed items showing what's been done in the newsfeed
-  I. Needs the name attached with the activity
--Username is thrown in out of place when they login COM
--Login is not working because username should be name in the database but username must be changed everywhere COM
-
-
-
-
-
-
+Sun Mar 16-17th:
+-Finish Fixing facebook login COM
+-Get code hosted on heroku COM
+-register domain COM
+-Fix password placeholder
+-Update newsfeed feature
 
 
 Areas for Design Improvement:
 1. Fix CSS towards OOCSS
-2. Create better color heirarchy
+2. Create better color heirarchy COM
   I. There's currently no dominant color as the black and the blue have
   equal prominance
 
-
-
-
--User Login
--Variable Reward Setup
-
-Steps:
--Wireframe Styling
--Change Look
--Change Counter feature COMPLETE
--Write out Engraving Text
--Put up Engraving
-
-
-Release 5:
-I. Signin Form
-II. Posting System
-
-Release 4 and 5
--Different Timers COMPLETE
--Fix Que Feature
--About Me
--What is Pomodora
--Push to Heroku COMPLETE
--Feedback
--Sign in Form after two Pomodoras
 
 
 

@@ -5,11 +5,7 @@
   <header class= "title">Pomodora</header>
   <div class="menu-item1">
     <h3 id="about-pomodoro" class="menu-item">What's a Pomodora?</h3>
-      <h3 id="about-title" class="menu-item">About
-      <% if current_user %>
-      <%= current_user.name %>
-        <% end %>
-    </h3>
+      <h3 id="about-title" class="menu-item">About</h3>
   </div>
 </div>
 <h2 class="primary-text"> What can you do in:</h2>
@@ -42,7 +38,9 @@
        <button type="button" class="twenty-five pomodoro-choices "><h4>Pomodora</h4></button>
     </div>
     <h3 id="countdown">25:00</h3>
-    <div id = "pomodoroCounter"><h2 id="pomodoroCountertext">0</h2> </div>
+    <div id = "pomodoroCounter"><h2 id="pomodoroCountertext"> <% if current_user  %>
+      <%= current_user.pomodoro %> <h5> P </h5> <% else %>
+        0<% end %></h2> </div>
     <form id ="user-input">
       <input id="textbox" type="text" name="todo"  placeholder="ex ~ Finish Reading Chapter 2">
     </form>
@@ -54,6 +52,7 @@
   </div>
 </div>
 </div>
+
 <div class="footer-container black-footer-styling">
   <h4 class="progress-bar-title"> </h4>
 

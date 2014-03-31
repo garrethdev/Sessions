@@ -6,14 +6,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
+    p @user
     @user.save!
     session[:user_id] = @user.id
     redirect_to :back
   end
 
   def increment
-    @user = User.find_by email: (params[:email])
+    @user = current_user
     @user.increment(:pomodoro,by = 1)
+    @user.save!
     render :nothing => true
   end
 end

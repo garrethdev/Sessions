@@ -4,10 +4,12 @@ class ApplicationController < ActionController::Base
 
 
   private
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def current
+    @current ||= User.find_by(email: params[:session][:email])
+    p @current
+    @current
   end
-  helper_method :current_user
+  helper_method :current
 end
 
 

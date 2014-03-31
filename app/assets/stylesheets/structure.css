@@ -26,17 +26,9 @@ body {
 #pomodoroCountertext {
   position: relative;
 }
-
- #about-title:hover {
-  text-decoration: underline;
- }
- #about-title {
+#about-title {
   margin-left: 3px;
- }
-
- #about-pomodoro:hover {
-  text-decoration: underline;
- }
+}
 
 
 .icon {
@@ -175,7 +167,7 @@ button {
 
 .menu-item1 {
   position: relative;
-  left: 920px;
+  left: 940px;
   color: #010259;
   top: -20px;
 }

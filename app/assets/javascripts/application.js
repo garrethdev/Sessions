@@ -44,7 +44,7 @@ var startClicked = (function (selectors) {
     selectors.starts.prop("disabled",true)
     var string = selectors.countdown.text().replace(':00','')
     var string = Number(string)
-    countdown("countdown", string, 00, selectors);
+    countdown("countdown", 00, 01, selectors);
   };
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;
@@ -99,7 +99,7 @@ var buttonClicked = (function (selectors) {
 
     // check if the user needs to login
     var loginCheck = function (selectors) {
-      if (selectors.counterText.text() == '10') {
+      if (selectors.counterText.text() == '1') {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {
@@ -121,7 +121,6 @@ var buttonClicked = (function (selectors) {
       var facebook = $('#facebook')
       // facebook.text("Hello Darkness My Old Friend")
       if(+selectors.counterText.text() >= 0) {
-        console.log("store counterText")
         $.ajax({
           type: 'POST',
           beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
@@ -213,7 +212,6 @@ var NewsFeed = {
   textdisplay: document.getElementById('newsfeed'),
   counterDisplay: 0,
   displays: function () {
-    console.log(startClicked)
     var feed = document.getElementById('newsfeed')
       setInterval(function(){
         $('#newsfeed').css("display", "none")

@@ -15,7 +15,6 @@
 //= require_self
 //= require_tree .
 //= require twitter/bootstrap
-
 var appcontroller = {
   init: function (selectors) {
     startClicked.init(selectors);
@@ -96,9 +95,7 @@ var buttonClicked = (function (selectors) {
     appcontroller.showStartHideYesNo(selectors);
   };
   var yesButton = function(event, selectors) {
-
-    // check if the user needs to login
-    var loginCheck = function (selectors) {
+    var signupCheck = function (selectors) {
       if (selectors.counterText.text() == '1' && window.location.search.length == 0) {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
@@ -115,11 +112,19 @@ var buttonClicked = (function (selectors) {
         })
       }
     }
-    loginCheck(selectors)
+    signupCheck(selectors)
+
+    var login = function (selectors) {
+      selectors.loginPartial.click(function() {
+        selectors.loginContent.css("display", "inline-block")
+      })
+    }
+
+    login(selectors)
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
-      if(+selectors.counterText.text() >= 0 window.location.search.length > 0) {
+      if(+selectors.counterText.text() >= 0 && window.location.search.length > 0) {
         var url = window.location.search
         var data = +url.slice(4)
         $.ajax({
@@ -286,8 +291,4 @@ $(function (){
     counter: $('#countdown')
   };
   appcontroller.init(selectors)
-$('#login-partial').click(function() {
-  $('#login-form').css("display", "inline-block")
-  })
 });
-

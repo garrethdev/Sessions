@@ -23,7 +23,10 @@ gem 'omniauth'
 gem 'oauth2'
 gem 'omniauth-facebook'
 gem 'certified'
+gem 'whenever', require: false
+gem 'capistrano-ext'
 gem 'protected_attributes'
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

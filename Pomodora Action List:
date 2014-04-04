@@ -141,17 +141,18 @@ Release 6th:
 
 
 April 3rd -April 5th:
-- I. How can I get it to save the actual user who just signed in even though Im redirecting them to a new page COM
+-How can I get it to save the actual user who just signed in even though Im redirecting them to a new page COM
       A. Send an object in a redirect COM
       B. Use that object to update the dom COM
       C. Figure out how to send that object to a post request COM
 -Page width
 -Setup Default Pomodoro restarting
 Secondary:
--Go Over session
+-Go Over session COM
 -Get Peek Setup
--Refactor JS
-  I. How can I make it quicker
+-Refactor
+  I. How can I make the app quicker
+  II. Reveiew Revealing module{}
 
 Sun-Mon 30th-April 1st:
 -Test out app 5 times

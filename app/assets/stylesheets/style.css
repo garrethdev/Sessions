@@ -99,8 +99,8 @@ body {
   font-size: 80px;
 }
 div.pomodoro-main-content {
-  background-color: #ffffff;
-  box-shadow: 3px 3px 1px #888888;
+  background-color: #ecebe9;
+  box-shadow: 2px 1px 3px 2px #888888;
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 5px;

@@ -1,20 +1,16 @@
 class UsersController < ApplicationController
-  def new
-    @user = User.new
-  end
 
 
   def create
     @user = User.create(user_params)
-    p "this is working"
-    p @user
+    @user.pomodoro = 3
     @user.save!
     session[:user_id] = @user.id
-    redirect_to :back
+    redirect_to(controller: 'names', id: @user.to_param)
   end
 
   def increment
-    @user = current_user
+    @user = User.find_by (params[:id])
     @user.increment(:pomodoro,by = 1)
     @user.save!
     render :nothing => true

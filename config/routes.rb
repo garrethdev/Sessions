@@ -1,12 +1,12 @@
 Pomodora::Application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks",   :registrations => "users"}
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  resources :users
+  resources :users, :as => :user
   resources :sessions
   get '/signin', :to => 'sessions#new'
-  post '/users/increment' => 'users#increment'
+  post '/users/increment/:id' => 'users#increment'
   get '/signout', :to => 'sessions#destroy'
-  get "/" => "names#index"
+  get "/", :to => "names#index"
   get "names/index"
 
 

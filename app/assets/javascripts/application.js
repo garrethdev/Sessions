@@ -99,7 +99,7 @@ var buttonClicked = (function (selectors) {
 
     // check if the user needs to login
     var loginCheck = function (selectors) {
-      if (selectors.counterText.text() == '1') {
+      if (selectors.counterText.text() == '1' && window.location.search.length == 0) {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {
@@ -119,12 +119,14 @@ var buttonClicked = (function (selectors) {
 
     var storePomodoros = function (selectors) {
       var facebook = $('#facebook')
-      // facebook.text("Hello Darkness My Old Friend")
-      if(+selectors.counterText.text() >= 0) {
+      if(+selectors.counterText.text() >= 0 window.location.search.length > 0) {
+        var url = window.location.search
+        var data = +url.slice(4)
         $.ajax({
           type: 'POST',
+          data: data,
           beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))},
-          url: '/users/increment'
+          url: '/users/increment/' + data
         })
        }
     }
@@ -288,3 +290,4 @@ $('#login-partial').click(function() {
   $('#login-form').css("display", "inline-block")
   })
 });
+

@@ -132,13 +132,26 @@ Release 6th:
   I. https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
   II. Figure out how current_user works
   III. Figure out how session works
-2. Fix Normal sign up
+2. Fix Normal sign up OM
 3. Reset Pomodoro at the end of each day
 4. Design:
  I.Fix Page width
  II. Underline of what's a pomodoro COM
- III. Test out product again using  Peek
+ III. Test out product again using  Peek COM
 
+
+April 3rd -April 5th:
+- I. How can I get it to save the actual user who just signed in even though Im redirecting them to a new page COM
+      A. Send an object in a redirect COM
+      B. Use that object to update the dom COM
+      C. Figure out how to send that object to a post request COM
+-Page width
+-Setup Default Pomodoro restarting
+Secondary:
+-Go Over session
+-Get Peek Setup
+-Refactor JS
+  I. How can I make it quicker
 
 Sun-Mon 30th-April 1st:
 -Test out app 5 times

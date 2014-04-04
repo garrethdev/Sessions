@@ -38,9 +38,13 @@
        <button type="button" class="twenty-five pomodoro-choices "><h4>Pomodora</h4></button>
     </div>
     <h3 id="countdown">25:00</h3>
-    <div id = "pomodoroCounter"><h2 id="pomodoroCountertext"> <% if @user  %>
-      <%= @user.pomodoro %>  <% else %> 0
-        0<% end %></h2> </div>
+    <div id = "pomodoroCounter"><h2 id="pomodoroCountertext">
+      <% if @user.id != nil  %>
+      <%= @user.pomodoro %>
+      <% else %>
+          0
+      <% end %>
+      </div>
     <form id ="user-input">
       <input id="textbox" type="text" name="todo"  placeholder="ex ~ Finish Reading Chapter 2">
     </form>

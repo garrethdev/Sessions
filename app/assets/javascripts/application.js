@@ -96,7 +96,7 @@ var buttonClicked = (function (selectors) {
   };
   var yesButton = function(event, selectors) {
     var signupCheck = function (selectors) {
-      if (selectors.counterText.text() == '1' && window.location.search.length == 0) {
+      if (selectors.counterText.text() == '10' && window.location.search.length == 0) {
         selectors.primaryContent.css('display', 'none');
         selectors.signupContent.fadeToggle( "slow", "linear")
         selectors.loginPartial.click(function() {

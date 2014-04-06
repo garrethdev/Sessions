@@ -128,16 +128,17 @@ Release 5:
     IV. Sessions when logged in COMPLETE
 
 Release 6th:
-1. Fix Normal Login
-  I. https://github.com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
+1. Fix Normal Login COM
+  I. https://github. com/plataformatec/devise/wiki/How-To:-Display-a-custom-sign_in-form-anywhere-in-your-app
   II. Figure out how current_user works
-  III. Figure out how session works
-2. Fix Normal sign up OM
+  III. Figure out how session works COM
+2. Fix Normal sign up COM
 3. Reset Pomodoro at the end of each day
 4. Design:
  I.Fix Page width
  II. Underline of what's a pomodoro COM
  III. Test out product again using  Peek COM
+ IV. Go over UX Problems
 
 
 April 3rd -April 5th:
@@ -149,7 +150,7 @@ April 3rd -April 5th:
 -Setup Default Pomodoro restarting
 Secondary:
 -Go Over session COM
--Get Peek Setup
+-Get Peek Setup COM
 -Refactor
   I. How can I make the app quicker
   II. Reveiew Revealing module{}

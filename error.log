@@ -58,3 +58,33 @@ database configuration does not specify adapter
 /Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
 Tasks: TOP => db:reset_pomodoro => environment
 (See full trace by running task with --trace)
+rake aborted!
+database configuration does not specify adapter
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/connection_specification.rb:52:in `resolve_hash_connection'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/connection_specification.rb:46:in `resolve_string_connection'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_adapters/connection_specification.rb:30:in `spec'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/connection_handling.rb:39:in `establish_connection'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railtie.rb:175:in `block (2 levels) in <class:Railtie>'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `instance_eval'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:38:in `execute_hook'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:28:in `block in on_load'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:27:in `each'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/lazy_load_hooks.rb:27:in `on_load'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activerecord-4.0.0/lib/active_record/railtie.rb:173:in `block in <class:Railtie>'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/initializable.rb:30:in `instance_exec'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/initializable.rb:30:in `run'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/initializable.rb:55:in `block in run_initializers'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/initializable.rb:54:in `run_initializers'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application.rb:215:in `initialize!'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/railtie/configurable.rb:30:in `method_missing'
+/Users/apprentice/Desktop/Pomodoro-App/pomodora/config/environment.rb:5:in `<top (required)>'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/dependencies.rb:228:in `require'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/dependencies.rb:228:in `block in require'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/dependencies.rb:213:in `load_dependency'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/activesupport-4.0.0/lib/active_support/dependencies.rb:228:in `require'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application.rb:189:in `require_environment!'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/gems/railties-4.0.0/lib/rails/application.rb:249:in `block in run_tasks_blocks'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `eval'
+/Users/apprentice/.rvm/gems/ruby-2.0.0-p247/bin/ruby_executable_hooks:15:in `<main>'
+Tasks: TOP => db:reset_pomodoro => environment
+(See full trace by running task with --trace)

@@ -43,7 +43,7 @@ var startClicked = (function (selectors) {
     selectors.starts.prop("disabled",true)
     var string = selectors.countdown.text().replace(':00','')
     var string = Number(string)
-    countdown("countdown", string, 00, selectors);
+    countdown("countdown", 00, 01, selectors);
   };
   var countdown = function (element, minutes, seconds, selectors) {
     var time = minutes*60 + seconds;

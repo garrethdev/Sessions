@@ -26,6 +26,7 @@ gem 'certified'
 gem 'whenever', require: false
 gem 'capistrano-ext'
 gem 'protected_attributes'
+gem 'heroku'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
